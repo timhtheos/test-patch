@@ -1142,7 +1142,7 @@ function field_attach_prepare_view($entity_type, $entities, $view_mode, $langcod
   // @todo: resolve this more generally for both entity and field level hooks.
   $prepare = array();
   foreach ($entities as $id => $entity) {
-    if (empty($entity->_field_view_prepared)) {
+    if ($id && empty($entity->_field_view_prepared)) {
       // Add this entity to the items to be prepared.
       $prepare[$id] = $entity;
 
